@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hackerSimulators</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            color: green;
+            font-size: 1.4rem;
+            padding: 5px;
+            /* text-decoration: line-through; */
+            transition: all 1s ease;
+        }
+        
+        .dotblink:nth-child(1){
+            animation: blink 1s 2;
+        }
+        @keyframes blink {
+  0% {
+    opacity: 1; /* Dot fully visible */
+  }
+  50% {
+    opacity: 0; /* Dot invisible */
+  }
+  100% {
+    opacity: 1; /* Dot fully visible again */
+  }
+}
+
+    </style>
+</head>
+<body>
+ 
+
+</body>
+<script>
+let body=document.querySelector('body');
+
+
+function writeText(s,val){
+let newElement = document.createElement('div');
+
+
+
+let dotblink = document.createElement('span');
+dotblink.className="dotblink";
+let t=3
+while(t--){
+    let ele = document.createElement('span');
+    ele.innerText="."
+    dotblink.appendChild(ele)
+}
+newElement.innerHTML=`${s}`;
+newElement.appendChild(dotblink)
+setTimeout(()=>{
+       body.appendChild(newElement);
+    },val);
+}
+
+
+
+body.style.background="black";
+ writeText("Initializing Hacking",1000)
+writeText("Reading your files",2000)
+writeText("password files Detected",3000)
+writeText("sending all your password and personal files to server",4000)
+writeText("cleanig up",5000)
+setTimeout(()=>{
+       body.innerHTML="";
+    },9000);
+</script>
+</html>
